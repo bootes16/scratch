@@ -46,8 +46,8 @@ def g2jd(year, month, day, hour = 0, minute = 0, second = 0):
 
     B = 0
     if ymd_gte(y, m, d, 1582, 10, 15):
-        A = cdiv(y,100) 
-        B = 2 - A + cdiv(A,4)
+        A = int(y/100)
+        B = 2 - A + int(A/4)
 
     C = 365.25 * y
     if y < 0:
@@ -78,6 +78,16 @@ def jd2jdn(jd):
 # Source: wikipedia
 #
 def g2jdn2(Y, M, D):
+    jdn = int((1461 * (Y + 4800 + int((M - 14)/12)))/ 4)
+    A = int((M-14)/12)
+    jdn += int((367 * (M -2 - (12 * A) )) / 12)
+    B = int((Y + 4900 + A)/100)
+    jdn -= int((3 * B)/4)
+    jdn += D - 32075
+
+    return jdn
+
+def g2jdn2old(Y, M, D):
     jdn = cdiv(1461 * (Y + 4800 + cdiv(M - 14,12)), 4)
     jdn += cdiv(367 * (M -2 - (12 * cdiv(M - 14,12) )) , 12)
     jdn -= cdiv(3 * cdiv(Y + 4900 + cdiv(M - 14,12),100), 4)
