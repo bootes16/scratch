@@ -1,0 +1,8 @@
+set shiftwidth=4
+set expandtab
+set ts=4
+map \j zj_zz
+map \k zk_zz
+map \- z_
+map \= =
+map \\ rk_ 
