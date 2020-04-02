@@ -6,3 +6,10 @@ map \k zk_zz
 map \- z_
 map \= =
 map \\ rk_ 
+
+"/usr/share/vim/vim80/colors/
+"morning evening desert elflord zellner pablo
+"colo desert
+"colo elflord
+colo pablo
+
