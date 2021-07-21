@@ -27,4 +27,6 @@ Add this to `/etc/fstab` to allow vmware shared folders to actually work:
 > sudo apt-get autoremove
 ```
 And check with:
-```aptitude search '~i' | grep libreoffice```
+```bash
+> aptitude search '~i' | grep libreoffice
+```
