@@ -1,4 +1,4 @@
-# Linux Info
+sudo apt-get autoremove# Linux Info
 
 ## Basic Setup
 1. `sudo apt-get install vim`
@@ -20,3 +20,11 @@ Add this to `/etc/fstab` to allow vmware shared folders to actually work:
 # Allow VMWare Shared Folders to work:
 .host:/         /mnt/hgfs       fuse.vmhgfs-fuse        defaults,allow_other,uid=1000   0       0
 ```
+## Completely Remove Libre Office
+```bash
+> sudo apt-get remove --purge libreoffice*
+> sudo apt-get clean
+> sudo apt-get autoremove
+```
+And check with:
+```aptitude search '~i' | grep libreoffice```
